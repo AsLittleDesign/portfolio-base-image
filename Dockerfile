@@ -30,11 +30,3 @@ RUN echo 'gem: --no-document' >> /usr/local/etc/gemrc &&\
 
 RUN gem update --system &&\
     gem install bundler
-
-# Set up NGINX
-ADD container/nginx_signing.key /var/www/nginx_signing.key
-RUN apt-key add /var/www/nginx_signing.key
-RUN echo "deb http://nginx.org/packages/mainline/ubuntu/ precise nginx" >> /etc/apt/sources.list
-RUN echo "deb-src http://nginx.org/packages/mainline/ubuntu/ precise nginx" >> /etc/apt/sources.list
-RUN apt-get update && apt-get install -y nginx
-
