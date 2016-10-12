@@ -5,7 +5,7 @@ MAINTAINER "Dave Scott McCarthy <dave@aslittledesign.com>"
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update -qq && \
-            apt-get install -y -qq \
+    apt-get install -y -qq \
             apt-utils \
             build-essential \
             patch \
@@ -17,7 +17,8 @@ RUN apt-get update -qq && \
             libmagickwand-dev \
             libcurl4-openssl-dev \
             libssl-dev \
-            libreadline-dev
+            libreadline-dev \
+            libsqlite3-dev
 
 # Set Ruby Version environment variable
 ENV RUBY_VERSION 2.3.0
